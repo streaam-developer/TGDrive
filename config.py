@@ -38,14 +38,14 @@ else:
 
 # Database backup interval in seconds. Backups will be sent to the storage channel at this interval
 DATABASE_BACKUP_TIME = int(
-    os.getenv("DATABASE_BACKUP_TIME", 60)
+    os.getenv("DATABASE_BACKUP_TIME", 10)
 )  # Default to 60 seconds
 
 # Time delay in seconds before retrying after a Telegram API floodwait error
 SLEEP_THRESHOLD = int(os.getenv("SLEEP_THRESHOLD", 60))  # Default to 60 seconds
 
 # Domain to auto-ping and keep the website active
-WEBSITE_URL = os.getenv("WEBSITE_URL", "devil.cinemanearme.online:8050")
+WEBSITE_URL = os.getenv("WEBSITE_URL", "https://cinemanearme.online/")
 
 
 # For Using TG Drive's Bot Mode
