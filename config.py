@@ -23,7 +23,7 @@ STORAGE_CHANNEL = int(os.getenv("STORAGE_CHANNEL", "-1002229884306"))  # Your st
 
 # Message ID of a file in the storage channel used for storing database backups
 DATABASE_BACKUP_MSG_ID = int(
-    os.getenv("DATABASE_BACKUP_MSG_ID", "4")
+    os.getenv("DATABASE_BACKUP_MSG_ID", "30")
 )  # Message ID for database backup
 
 # Password used to access the website's admin panel
@@ -56,5 +56,5 @@ if MAIN_BOT_TOKEN.strip() == "":
     MAIN_BOT_TOKEN = None
 
 # List of Telegram User IDs who have admin access to the bot mode
-TELEGRAM_ADMIN_IDS = os.getenv("TELEGRAM_ADMIN_IDS", "5764988016, 1833940312").strip(", ").split(",")
+TELEGRAM_ADMIN_IDS = os.getenv("TELEGRAM_ADMIN_IDS", "").strip(", ").split(",")
 TELEGRAM_ADMIN_IDS = [int(id) for id in TELEGRAM_ADMIN_IDS if id.strip() != ""]
