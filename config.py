@@ -9,7 +9,7 @@ API_ID = int(os.getenv("API_ID", "23149497"))  # Your Telegram API ID
 API_HASH = os.getenv("API_HASH", "B5129D40FF05CEC2432B97F1BF26E954")  # Your Telegram API Hash
 
 # List of Telegram bot tokens used for file upload/download operations
-BOT_TOKENS = os.getenv("BOT_TOKENS", "6662816722:AAEz_HNUaoX9kZBl632Eq485_HnW8vhnZnQ").strip(", ").split(",")
+BOT_TOKENS = os.getenv("BOT_TOKENS", "7190050666:AAGec7JH8eiUjwWNxFgS1Lsx79MC4nQ4u_4").strip(", ").split(",")
 BOT_TOKENS = [token.strip() for token in BOT_TOKENS if token.strip() != ""]
 
 # List of Premium Telegram Account Pyrogram String Sessions used for file upload/download operations
