@@ -5,11 +5,11 @@ import os
 load_dotenv()
 
 # Telegram API credentials obtained from https://my.telegram.org/auth
-API_ID = int(os.getenv("API_ID"))  # Your Telegram API ID
-API_HASH = os.getenv("API_HASH")  # Your Telegram API Hash
+API_ID = int(os.getenv("API_ID", "23149497"))  # Your Telegram API ID
+API_HASH = os.getenv("API_HASH", "B5129D40FF05CEC2432B97F1BF26E954")  # Your Telegram API Hash
 
 # List of Telegram bot tokens used for file upload/download operations
-BOT_TOKENS = os.getenv("BOT_TOKENS", "").strip(", ").split(",")
+BOT_TOKENS = os.getenv("BOT_TOKENS", "6662816722:AAEz_HNUaoX9kZBl632Eq485_HnW8vhnZnQ").strip(", ").split(",")
 BOT_TOKENS = [token.strip() for token in BOT_TOKENS if token.strip() != ""]
 
 # List of Premium Telegram Account Pyrogram String Sessions used for file upload/download operations
@@ -23,7 +23,7 @@ STORAGE_CHANNEL = int(os.getenv("STORAGE_CHANNEL"))  # Your storage channel's ch
 
 # Message ID of a file in the storage channel used for storing database backups
 DATABASE_BACKUP_MSG_ID = int(
-    os.getenv("DATABASE_BACKUP_MSG_ID")
+    os.getenv("DATABASE_BACKUP_MSG_ID", "4")
 )  # Message ID for database backup
 
 # Password used to access the website's admin panel
@@ -51,10 +51,10 @@ WEBSITE_URL = os.getenv("WEBSITE_URL", None)
 # For Using TG Drive's Bot Mode
 
 # Main Bot Token for TG Drive's Bot Mode
-MAIN_BOT_TOKEN = os.getenv("MAIN_BOT_TOKEN", "")
+MAIN_BOT_TOKEN = os.getenv("MAIN_BOT_TOKEN", "6662816722:AAEz_HNUaoX9kZBl632Eq485_HnW8vhnZnQ")
 if MAIN_BOT_TOKEN.strip() == "":
     MAIN_BOT_TOKEN = None
 
 # List of Telegram User IDs who have admin access to the bot mode
-TELEGRAM_ADMIN_IDS = os.getenv("TELEGRAM_ADMIN_IDS", "").strip(", ").split(",")
+TELEGRAM_ADMIN_IDS = os.getenv("TELEGRAM_ADMIN_IDS", "5764988016").strip(", ").split(",")
 TELEGRAM_ADMIN_IDS = [int(id) for id in TELEGRAM_ADMIN_IDS if id.strip() != ""]
