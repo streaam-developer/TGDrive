@@ -4,7 +4,7 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 import config
 from utils.logger import Logger
 from pathlib import Path
-from directoryHandler import getRandomID
+from utils.directoryHandler import getRandomID
 
 logger = Logger(__name__)
 
