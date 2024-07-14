@@ -197,7 +197,7 @@ async def file_handler(client: Client, message: Message):
 """
     )
  ##    )
-s
+
 
 async def start_bot_mode(d, b):
     global DRIVE_DATA, BOT_MODE
