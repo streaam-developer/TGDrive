@@ -4,6 +4,7 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 import config
 from utils.logger import Logger
 from pathlib import Path
+from directoryHandler import getRandomID
 
 logger = Logger(__name__)
 
@@ -172,7 +173,7 @@ async def file_handler(client: Client, message: Message):
         copied_message.id,
         file.file_size,
     )
-
+    
     await message.reply_text(
         f"""✅ File Uploaded Successfully To Your TG Drive Website
                              
@@ -181,6 +182,7 @@ async def file_handler(client: Client, message: Message):
 **File Size:** {file.file_size} Bytes
 **File ID:** {copied_message.id}
 **File Link:** {copied_message.link}
+**File Link:**  https://cinemanearme.online/file?path=/{getRandomID(copied_message.id)}
 """
     )
 
