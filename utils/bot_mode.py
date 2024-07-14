@@ -184,8 +184,8 @@ async def file_handler(client: Client, message: Message):
         copied_message.id,
         file.file_size,
     )
-    id_de=copied_message.id
-    dekh_link = f"https://cinemanearme.online/file?path=/{getRandomID(id_de)}"
+    id_de = getRandomID(copied_message.id)
+    
     await message.reply_text(
         f"""✅ File Uploaded Successfully To Your TG Drive Website
                              
@@ -194,8 +194,11 @@ async def file_handler(client: Client, message: Message):
 **File Size:** {file.file_size} Bytes
 **File ID:** {copied_message.id}
 **File Link:** {copied_message.link}
-**File Link:** {dekh_link}
 """
+    )
+    await message.reply_text(
+        
+dekh_link = f"https://cinemanearme.online/file?path=/{id_de}"
     )
 
 
