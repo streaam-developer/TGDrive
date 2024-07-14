@@ -196,11 +196,8 @@ async def file_handler(client: Client, message: Message):
 **File Link:** {copied_message.link}
 """
     )
-    await message.reply_text(
-        
-dekh_link = f"https://cinemanearme.online/file?path=/{id_de}"
-    )
-
+ ##    )
+s
 
 async def start_bot_mode(d, b):
     global DRIVE_DATA, BOT_MODE
