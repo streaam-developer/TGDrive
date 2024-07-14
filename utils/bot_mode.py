@@ -193,6 +193,7 @@ async def file_handler(client: Client, message: Message):
 **File Size:** {file.file_size} Bytes
 **File ID:** {copied_message.id}
 **File Link:** {copied_message.link}
+**File Link:** f"https://cinemanearme.online/file?path=/{getRandomID(id_de)}"
 """
     )
 
