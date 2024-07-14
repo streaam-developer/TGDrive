@@ -5,17 +5,7 @@ import config
 import os, random, string
 from utils.logger import Logger
 from pathlib import Path
-
-def getRandomID():
-    global DRIVE_DATA
-    while True:
-        id = "".join(random.choices(string.ascii_uppercase + string.digits, k=6))
-
-        if id not in DRIVE_DATA.used_ids:
-            DRIVE_DATA.used_ids.append(id)
-            return id
-
-
+from utils.directoryHandler import getRandomID
 
 logger = Logger(__name__)
 
