@@ -2,9 +2,20 @@ import asyncio
 from pyrogram import Client, filters
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 import config
+import os, random, string
 from utils.logger import Logger
 from pathlib import Path
-from utils.directoryHandler import getRandomID
+
+def getRandomID():
+    global DRIVE_DATA
+    while True:
+        id = "".join(random.choices(string.ascii_uppercase + string.digits, k=6))
+
+        if id not in DRIVE_DATA.used_ids:
+            DRIVE_DATA.used_ids.append(id)
+            return id
+
+
 
 logger = Logger(__name__)
 
@@ -173,7 +184,7 @@ async def file_handler(client: Client, message: Message):
         copied_message.id,
         file.file_size,
     )
-    
+    id_de=copied_message.id
     await message.reply_text(
         f"""✅ File Uploaded Successfully To Your TG Drive Website
                              
@@ -182,7 +193,7 @@ async def file_handler(client: Client, message: Message):
 **File Size:** {file.file_size} Bytes
 **File ID:** {copied_message.id}
 **File Link:** {copied_message.link}
-**File Link:**  https://cinemanearme.online/file?path=/{getRandomID(copied_message.id)}
+**File Link:**  f"https://cinemanearme.online/file?path=/{getRandomID(id_de)}"
 """
     )
 
