@@ -2,10 +2,8 @@ import asyncio
 from pyrogram import Client, filters
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 import config
-import os, random, string
 from utils.logger import Logger
 from pathlib import Path
-from utils.directoryHandler import getRandomID
 
 logger = Logger(__name__)
 
@@ -19,7 +17,7 @@ You can use this bot to upload files to your TG Drive website directly instead o
 
 📤 **How To Upload Files:** Send a file to this bot and it will be uploaded to your TG Drive website. You can also set a folder for file uploads using /set_folder command.
 
-
+Read more about [TG Drive's Bot Mode](https://github.com/TechShreyash/TGDrive#tg-drives-bot-mode)
 """
 
 SET_FOLDER_PATH_CACHE = {}  # Cache to store folder path for each folder id
@@ -174,19 +172,14 @@ async def file_handler(client: Client, message: Message):
         copied_message.id,
         file.file_size,
     )
-    id_de = getRandomID(copied_message.id)
-    
+
     await message.reply_text(
         f"""✅ File Uploaded Successfully To Your TG Drive Website
                              
 **File Name:** {file.file_name}
 **Folder:** {BOT_MODE.current_folder_name}
-**File Size:** {file.file_size} Bytes
-**File ID:** {copied_message.id}
-**File Link:** {copied_message.link}
 """
     )
- ##    )
 
 
 async def start_bot_mode(d, b):
